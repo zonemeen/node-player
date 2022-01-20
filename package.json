@@ -1,6 +1,6 @@
 {
-  "name": "node-player",
-  "version": "1.0.1",
+  "name": "@miqilin21/node-player",
+  "version": "1.0.2",
   "description": "A command line player for NodeJS",
   "main": "dist/main.js",
   "scripts": {
@@ -35,7 +35,8 @@
     "cli player"
   ],
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "license": "MIT",
   "devDependencies": {
