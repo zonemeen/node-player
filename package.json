@@ -1,0 +1,48 @@
+{
+  "name": "node-player",
+  "version": "1.0.1",
+  "description": "A command line player for NodeJS",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "author": "miqilin21",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miqilin21/node-player.git"
+  },
+  "bugs": {
+    "url": "https://github.com/miqilin21/node-player/issues"
+  },
+  "keywords": [
+    "cli",
+    "sound",
+    "audio",
+    "play",
+    "player",
+    "music",
+    "node",
+    "window",
+    "mac",
+    "sound play",
+    "audio play",
+    "music play",
+    "sound player",
+    "audio player",
+    "music player",
+    "node audio",
+    "audio node",
+    "cli player"
+  ],
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "babel-loader": "^8.0.6",
+    "prettier": "^2.5.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  }
+}
