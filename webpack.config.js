@@ -4,7 +4,6 @@ module.exports = {
   entry: {
     main: path.resolve('src/index.js'),
   },
-
   target: 'node',
   output: {
     path: path.resolve(__dirname, 'dist'),
