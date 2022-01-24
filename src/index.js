@@ -1,4 +1,4 @@
-const { commandSync } = require('execa')
+const { command } = require('execa')
 const platform = require('os').platform()
 
 /* MAC PLAY COMMAND */
@@ -17,8 +17,10 @@ const windowPlayCommand = (path, volume) =>
     path
   )} ${setAudioVolume(volume)} ${playAudio} ${stopAudio}`
 
+let subprocess
+
 module.exports = {
-  play: async (path, volume = 0.5) => {
+  play(path, volume = 0.5) {
     /**
      * Window: mediaplayer's volume is from 0 to 1, default is 0.5
      * Mac: afplay's volume is from 0 to 255, default is 1. However, volume > 2 usually result in distortion.
@@ -32,9 +34,12 @@ module.exports = {
         ? macPlayCommand(path, volumeAdjustedByOS)
         : windowPlayCommand(path, volumeAdjustedByOS)
     try {
-      await commandSync(playCommand)
+      subprocess = command(playCommand)
     } catch (err) {
       throw err
     }
+  },
+  kill() {
+    subprocess.kill()
   },
 }
