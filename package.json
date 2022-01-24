@@ -2,7 +2,7 @@
   "name": "@miqilin21/node-player",
   "version": "1.0.2",
   "description": "A command line player for NodeJS",
-  "main": "dist/main.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js"
   },
@@ -45,5 +45,8 @@
     "prettier": "^2.5.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "execa": "^5.1.1"
   }
 }

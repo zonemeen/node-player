@@ -1,5 +1,4 @@
-const { exec } = require('child_process')
-const execPromise = require('util').promisify(exec)
+const { commandSync } = require('execa')
 const platform = require('os').platform()
 
 /* MAC PLAY COMMAND */
@@ -33,7 +32,7 @@ module.exports = {
         ? macPlayCommand(path, volumeAdjustedByOS)
         : windowPlayCommand(path, volumeAdjustedByOS)
     try {
-      await execPromise(playCommand, { windowsHide: true })
+      await commandSync(playCommand)
     } catch (err) {
       throw err
     }
