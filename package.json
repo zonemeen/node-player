@@ -1,6 +1,6 @@
 {
   "name": "@miqilin21/node-player",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A command line player for NodeJS",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
