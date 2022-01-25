@@ -1,7 +1,5 @@
 import { command } from 'execa'
-import os from 'os'
-
-const platform = os.platform()
+import { platform } from 'os'
 
 /* MAC PLAY COMMAND */
 const macPlayCommand = (path, volume) => `afplay \"${path}\" -v ${volume}`
@@ -29,10 +27,10 @@ const nPlayer = {
      * Therefore, it is better to limit the volume on Mac, and set a common scale of 0 to 1 for simplicity
      */
     const volumeAdjustedByOS =
-      platform === 'darwin' ? Math.min(2, volume * 2) : volume
+      platform() === 'darwin' ? Math.min(2, volume * 2) : volume
 
     const playCommand =
-      platform === 'darwin'
+      platform() === 'darwin'
         ? macPlayCommand(path, volumeAdjustedByOS)
         : windowPlayCommand(path, volumeAdjustedByOS)
     try {
