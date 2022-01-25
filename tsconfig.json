@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": ["**/dist", "**/example", "**/node_modules"]
+}

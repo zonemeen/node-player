@@ -1,5 +1,7 @@
-const { command } = require('execa')
-const platform = require('os').platform()
+import { command } from 'execa'
+import os from 'os'
+
+const platform = os.platform()
 
 /* MAC PLAY COMMAND */
 const macPlayCommand = (path, volume) => `afplay \"${path}\" -v ${volume}`
@@ -19,8 +21,8 @@ const windowPlayCommand = (path, volume) =>
 
 let subprocess
 
-module.exports = {
-  play(path, volume = 0.5) {
+const nPlayer = {
+  play(path: string, volume: number = 0.5) {
     /**
      * Window: mediaplayer's volume is from 0 to 1, default is 0.5
      * Mac: afplay's volume is from 0 to 255, default is 1. However, volume > 2 usually result in distortion.
@@ -43,3 +45,5 @@ module.exports = {
     subprocess.kill()
   },
 }
+
+export { nPlayer }

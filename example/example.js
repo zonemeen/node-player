@@ -1,7 +1,7 @@
 const path = require('path')
-const sound = require('../src/index')
+const { nPlayer } = require('../dist/index.js')
 const filePath = path.join(__dirname, 'foo.mp3')
-sound.play(filePath)
+nPlayer.play(filePath)
 setTimeout(() => {
-  sound.kill()
-}, 1000)
+  nPlayer.kill()
+}, 5000)
