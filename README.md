@@ -50,7 +50,7 @@ nPlayer.play(filePath)
 nPlayer.play('C:\\file.mp3')
 ```
 
-### Adjusting Volume
+### Adjusting volume
 
 ```sh
 /**
@@ -58,8 +58,14 @@ nPlayer.play('C:\\file.mp3')
  * 0.5 = default
  * 1   = max volume
  */
-const volume = 0.1;
+const volume = 0.1
 nPlayer.play('file.mp3', volume)
+```
+
+### Kill process
+
+```sh
+nPlayer.kill()
 ```
 
 ## License
