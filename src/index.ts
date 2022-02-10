@@ -18,7 +18,7 @@ const windowPlayCommand = (path, volume) =>
 
 let subprocess
 
-const nPlayer = {
+class Player {
   play(path: string, volume: number = 0.5) {
     /**
      * Window: mediaplayer's volume is from 0 to 1, default is 0.5
@@ -37,10 +37,10 @@ const nPlayer = {
     } catch (err) {
       throw err
     }
-  },
+  }
   kill() {
     subprocess.kill()
-  },
+  }
 }
 
-export { nPlayer }
+export default Player

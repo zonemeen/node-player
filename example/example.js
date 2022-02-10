@@ -1,7 +1,12 @@
-const path = require('path')
-const { nPlayer } = require('../dist/index.js')
+import path from 'path'
+import Player from '../dist/index.js'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 const filePath = path.join(__dirname, 'foo.mp3')
-nPlayer.play(filePath)
+const player = new Player()
+player.play(filePath)
 setTimeout(() => {
-  nPlayer.kill()
+  player.kill()
 }, 5000)
