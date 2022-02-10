@@ -21,33 +21,42 @@ yarn add @miqilin21/node-player
 cjs:
 
 ```sh
-const { nPlayer } = require('@miqilin21/node-player')
+const { Player } = require('@miqilin21/node-player')
+const player = new Player()
 ```
 
 esm:
 
 ```sh
-import { nPlayer } from '@miqilin21/node-player'
+import { Player } from '@miqilin21/node-player'
+const player = new Player()
 ```
 
 ### Relative path
 
-```sh
-nPlayer.play('file.mp3')
-```
-
-or
+cjs：
 
 ```sh
 const path = require('path')
 const filePath = path.join(__dirname, 'file.mp3')
-nPlayer.play(filePath)
+player.play(filePath)
+```
+
+esm：
+
+```sh
+import path from 'path'
+import { fileURLToPath } from 'url'
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const filePath = path.join(__dirname, 'foo.mp3')
+player.play(filePath)
 ```
 
 ### Absolute path
 
 ```sh
-nPlayer.play('C:\\file.mp3')
+player.play('C:\\file.mp3')
 ```
 
 ### Adjusting volume
@@ -59,13 +68,13 @@ nPlayer.play('C:\\file.mp3')
  * 1   = max volume
  */
 const volume = 0.1
-nPlayer.play('file.mp3', volume)
+player.play('file.mp3', volume)
 ```
 
 ### Kill process
 
 ```sh
-nPlayer.kill()
+player.kill()
 ```
 
 ## License
