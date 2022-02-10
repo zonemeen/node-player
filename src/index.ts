@@ -43,4 +43,4 @@ class Player {
   }
 }
 
-export default Player
+export { Player }

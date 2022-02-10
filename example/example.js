@@ -1,5 +1,5 @@
 import path from 'path'
-import Player from '../dist/index.js'
+import { Player } from '../dist/index.js'
 import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
