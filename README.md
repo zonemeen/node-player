@@ -79,7 +79,7 @@ player.kill()
 
 ## License
 
-Released under [MIT](/LICENSE) by [@miqilin21](https://github.com/miqilin21).
+Released under [MIT](/LICENSE) by [@zonemeen](https://github.com/zonemeen).
 
 
 
