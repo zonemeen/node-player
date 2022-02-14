@@ -1,6 +1,6 @@
 {
-  "name": "@miqilin21/node-player",
-  "version": "1.0.7",
+  "name": "@zonemeen/node-player",
+  "version": "1.0.1",
   "description": "A command line player for NodeJS",
   "type": "module",
   "main": "dist/index.cjs",
@@ -11,13 +11,13 @@
     "prepublishOnly": "yarn build",
     "release": "npx bumpp --push --tag --commit && npm publish"
   },
-  "author": "miqilin21 <miqilin18@gmail.com>",
+  "author": "zonemeen <miqilin18@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/miqilin21/node-player.git"
+    "url": "git+https://github.com/zonemeen/node-player.git"
   },
   "bugs": {
-    "url": "https://github.com/miqilin21/node-player/issues"
+    "url": "https://github.com/zonemeen/node-player/issues"
   },
   "keywords": [
     "cli",
