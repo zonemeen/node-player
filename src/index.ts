@@ -47,20 +47,31 @@ class Player {
       } else {
         const $http = src.indexOf('http') === 0 ? https : http
         $http.get(src, (res) => {
-          const fileSteam = fs.createWriteStream('temp.mp3')
+          const extension = path.extname(src).toLowerCase().substring(1)
+          const fileSteam = fs.createWriteStream(`temp.${extension}`)
           res.pipe(fileSteam)
 
-          filePath = path.join(process.cwd(), 'temp.mp3')
+          filePath = path.join(process.cwd(), `temp.${extension}`)
 
           playCommand =
             process.platform === 'darwin'
               ? macPlayCommand(filePath, volumeAdjustedByOS)
               : windowPlayCommand(filePath, volumeAdjustedByOS)
 
-          subProcess = command(playCommand)
-
           fileSteam.on('finish', () => {
+            subProcess = command(playCommand)
             fileSteam.end()
+          })
+
+          process.on('SIGINT', () => {
+            fs.unlinkSync(filePath)
+            process.exit(0)
+          })
+          process.on('exit', () => {
+            if (fs.existsSync(filePath)) {
+              fs.unlinkSync(filePath)
+              process.exit(0)
+            }
           })
         })
       }
@@ -71,7 +82,7 @@ class Player {
   kill() {
     subProcess.kill()
     if (!isLocal) {
-      fs.unlinkSync(filePath)
+      fs.existsSync(filePath) && fs.unlinkSync(filePath)
     }
   }
 }

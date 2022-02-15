@@ -11,4 +11,4 @@ player.play(
 )
 setTimeout(() => {
   player.kill()
-}, 30000)
+}, 20000)
