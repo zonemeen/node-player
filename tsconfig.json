@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "strictNullChecks": true,
-    "module": "es6",
-    "jsx": "react",
+    "module": "ESNext",
+    "target": "es2017",
+    "lib": ["ESNext", "DOM"],
     "strict": true,
-    "target": "es5",
     "allowJs": true,
+    "esModuleInterop": true,
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true
