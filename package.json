@@ -9,7 +9,7 @@
   "scripts": {
     "build": "rimraf dist && tsup --dts --minify --format cjs,esm",
     "prepublishOnly": "yarn build",
-    "release": "npx bumpp --push --tag --commit && npm publish"
+    "release": "npx bumpp --commit --tag --push && npm publish"
   },
   "author": "zonemeen <miqilin18@gmail.com>",
   "repository": {

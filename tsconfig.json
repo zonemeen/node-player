@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "strictNullChecks": true,
+    "module": "es6",
+    "jsx": "react",
+    "strict": true,
+    "target": "es5",
+    "allowJs": true,
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true
