@@ -9,7 +9,7 @@
   "scripts": {
     "build": "rimraf dist && tsup --dts --minify --format cjs,esm",
     "prepublishOnly": "yarn build",
-    "release": "npx bumpp --commit --tag --push && npm publish"
+    "release": "bumpp --commit --push --tag && npm publish"
   },
   "author": "zonemeen <miqilin18@gmail.com>",
   "repository": {
@@ -46,6 +46,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^17.0.11",
+    "bumpp": "^7.1.1",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
     "tsup": "^5.11.11",
