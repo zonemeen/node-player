@@ -22,7 +22,7 @@ const windowPlayCommand = (src: string, volume: number) =>
     src
   )} ${setAudioVolume(volume)} ${playAudio} ${stopAudio}`
 
-let subProcess: ExecaChildProcess, filePath: string, isLocal: boolean
+declare let subProcess: ExecaChildProcess, filePath: string, isLocal: boolean
 
 class Player {
   play(src: string, volume: number = 0.5) {
